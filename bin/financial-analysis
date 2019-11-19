@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require_relative "../lib/financial_analysis"
+
+FinancialAnalysis::CLI.new.start
