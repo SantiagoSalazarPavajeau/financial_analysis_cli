@@ -10,9 +10,9 @@ class FinancialAnalysis::Company
   
   def initialize(name)
     @name = name
-    @balance_sheet 
-    @income_statement
-    @profile
+    @balance_sheet= "Balance Sheet Object"
+    @income_statement = "Income Statment Object"
+    @profile = "Profile Object"
   end
   
   def self.all
