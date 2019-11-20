@@ -14,6 +14,22 @@ class FinancialAnalysis::CLI
   end
   
   def menu
-    puts "Choose a company you would like more information on."
+    input = nil
+    while input != 'exit'
+    puts "Choose a company you would like more information on. Type list to see all the available companies or type exit."
+      input = gets.strip.downcase
+      case input 
+      when "apple"
+        puts "Apple's income is $10 trillion"
+      when "facebook"
+        puts "Facbook's income is $20 trillion"
+      when "gm"
+        puts "GM's income is $30 trillion"
+      when 'list'
+        list_companies
+      else
+        puts "Say again? You can retry typing the company's name, or 'list', or 'exit'."
+      end
+    end
   end
 end
