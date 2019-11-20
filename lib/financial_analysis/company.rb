@@ -4,15 +4,22 @@ class FinancialAnalysis::Company
   # https://financialmodelingprep.com/api/v3/financials/income-statement/AAPL
   # https://financialmodelingprep.com/api/v3/company/stock/list
   
+  attr_accessor :name, :balance_sheet, :income_statement, :profile
+  
   @@all = []
   
-  def initialize
-   #balance-sheet-statement
-   #income-statement
+  def initialize(name)
+    @name = name
+    @balance_sheet 
+    @income_statement
+    @profile
   end
   
   def self.all
     @@all
+    # puts "1. Apple"
+    # puts "2. Facebook"
+    # puts "3. GM"
   end
   
 end

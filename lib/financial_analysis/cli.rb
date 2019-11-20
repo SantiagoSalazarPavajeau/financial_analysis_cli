@@ -8,9 +8,7 @@ class FinancialAnalysis::CLI
   end
   
   def list_companies
-    puts "1. Apple"
-    puts "2. Facebook"
-    puts "3. GM"
+   
   end
   
   def menu
