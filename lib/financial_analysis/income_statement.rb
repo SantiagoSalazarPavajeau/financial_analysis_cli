@@ -1,4 +1,4 @@
-class IncomeStatement
+class FinancialAnalysis::IncomeStatement
   
   attr_accessor :company, :year
   
