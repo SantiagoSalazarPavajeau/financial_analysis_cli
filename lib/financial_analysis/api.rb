@@ -16,9 +16,9 @@ class FinancialAnalysis::API
   #   income_statement = FinancialAnalysis::IncomeStatement.new(response)
   # end
   
-  def get_profile(ticker)
-    response = HTTParty.get("https://financialmodelingprep.com/api/v3/company/profile/#{ticker}")
-    profile = FinancialAnalysis::Profile.new(response)
-  end
+  # def get_profile(ticker)
+  #   response = HTTParty.get("https://financialmodelingprep.com/api/v3/company/profile/#{ticker}")
+  #   profile = FinancialAnalysis::Profile.new(response)
+  # end
   
 end

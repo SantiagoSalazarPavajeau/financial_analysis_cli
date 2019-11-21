@@ -15,6 +15,11 @@ class FinancialAnalysis::Company
     @profile = "Profile Object"
   end
   
+  def get_profile(ticker)
+    response = HTTParty.get("https://financialmodelingprep.com/api/v3/company/profile/#{ticker}")
+    profile = FinancialAnalysis::Company.new(response)
+  end
+  
   def name
     
   end
