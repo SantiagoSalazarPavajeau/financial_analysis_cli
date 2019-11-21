@@ -1,9 +1,10 @@
 class BalanceSheet
   
-  attr_accessor :company
+  attr_accessor :company, :year
   
-  def initialize(company)
+  def initialize(company, year)
     @company = company
+    @year = year
   end
   
   def get_balance_sheet(ticker)

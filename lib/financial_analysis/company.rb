@@ -15,6 +15,10 @@ class FinancialAnalysis::Company
     @profile = "Profile Object"
   end
   
+  def name
+    
+  end
+  
   def self.all
     @@all
     # puts "1. Apple"
