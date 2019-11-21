@@ -4,7 +4,7 @@ class FinancialAnalysis::Company
   # https://financialmodelingprep.com/api/v3/financials/income-statement/AAPL
   # https://financialmodelingprep.com/api/v3/company/stock/list
   
-  attr_accessor :name, :balance_sheet, :income_statement, :profile
+  attr_accessor :name, :balance_sheet, :income_statement, :price, :beta, :volAvg, :mktCap, :lastDiv, :range, :changes, :changesPercentage, :companyName, :exchange, :industry, :website, :description, :ceo, :sector, :image
   
   @@all = []
   
@@ -12,7 +12,6 @@ class FinancialAnalysis::Company
     @name = name
     @balance_sheet= "Balance Sheet Object"
     @income_statement = "Income Statment Object"
-    @profile = "Profile Object"
   end
   
   def get_profile(ticker)
