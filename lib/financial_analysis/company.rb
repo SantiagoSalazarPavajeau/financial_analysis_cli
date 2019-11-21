@@ -4,24 +4,17 @@ class FinancialAnalysis::Company
   # https://financialmodelingprep.com/api/v3/financials/income-statement/AAPL
   # https://financialmodelingprep.com/api/v3/company/stock/list
   
-  attr_accessor :name, :balance_sheet, :income_statement, :price, :beta, :volAvg, :mktCap, :lastDiv, :range, :changes, :changesPercentage, :companyName, :exchange, :industry, :website, :description, :ceo, :sector, :image
+  attr_accessor :name, :balance_sheets, :income_statements, :price, :beta, :volAvg, :mktCap, :lastDiv, :range, :changes, :changesPercentage, :companyName, :exchange, :industry, :website, :description, :ceo, :sector, :image
   
   @@all = []
   
-  def initialize(name)
-    @name = name
-    @balance_sheet= "Balance Sheet Object"
-    @income_statement = "Income Statment Object"
-    response["profile"].each { |k,v| self.send("@#{k}=", v) }
-  end
-  
-  def get_profile(ticker)
+  def initialize(ticker)
+    # @name = api_hash["companyName"]
+    # @balance_sheets = []
+    # @income_statements = []
     response = HTTParty.get("https://financialmodelingprep.com/api/v3/company/profile/#{ticker}")
-    profile = FinancialAnalysis::Company.new(response)
-  end
-  
-  def name
-    
+    response["profile"].each { |k,v| self.send("#{k}=", v) }
+    @@all << self
   end
   
   def self.all
