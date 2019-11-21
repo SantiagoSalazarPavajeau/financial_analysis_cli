@@ -12,6 +12,7 @@ class FinancialAnalysis::Company
     @name = name
     @balance_sheet= "Balance Sheet Object"
     @income_statement = "Income Statment Object"
+    response["profile"].each { |k,v| self.send("@#{k}=", v) }
   end
   
   def get_profile(ticker)
