@@ -14,7 +14,7 @@ class FinancialAnalysis::BalanceSheet
     response["financials"][year_index].each { |k,v| self.send("@#{k}=", v) }
   end
   
-   def company=(company_obj)
+  def company=(company_obj)
     self.company = company_obj
     company_obj.balance_sheets << self
   end

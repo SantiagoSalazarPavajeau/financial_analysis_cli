@@ -7,7 +7,7 @@ class FinancialAnalysis::API
     response["mostActiveStock"].each do |hash|
       FinancialAnalysis::Company.new(hash["ticker"])
     end
-    binding.pry 
+    #binding.pry
   end
   
   def get_balance_sheet(ticker)
