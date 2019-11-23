@@ -4,7 +4,7 @@ class FinancialAnalysis::Company
   # https://financialmodelingprep.com/api/v3/financials/income-statement/AAPL
   # https://financialmodelingprep.com/api/v3/company/stock/list
   
-  attr_accessor :name, :ticker, :balance_sheets, :income_statements, :price, :beta, :volAvg, :mktCap, :lastDiv, :range, :changes, :changesPercentage, :companyName, :exchange, :industry, :website, :description, :ceo, :sector, :image
+  attr_accessor :ticker, :balance_sheets, :income_statements, :price, :beta, :volAvg, :mktCap, :lastDiv, :range, :changes, :changesPercentage, :companyName, :exchange, :industry, :website, :description, :ceo, :sector, :image
   
   @@all = []
   

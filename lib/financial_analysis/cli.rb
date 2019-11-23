@@ -16,27 +16,34 @@ class FinancialAnalysis::CLI
     end
   end
   
-  def display_company_attributes(company_number)
-    # company number must refer to that company
-    # .each do |company|
-    #   puts "#{company}"
-    # end
+  def display_company_attributes(input)
+    # company ticker must connect to that company object
+    # attributes of one company should be displayed
+    # specific company is not being selected
+    company = @companies.detect{ |company| company.ticker == input}
+     puts ""
+     puts "#{company.instance_methods}"
+     puts ""
   end
   
-  def display_company_attribute(attribute)
+  def display_company_attribute(input)
+    company = @companies.detect{ |company| company.ticker == input}
+     puts ""
+     puts "#{company.companyName}: #{company.input}"
+     puts ""
   end
   
   def menu
     input = nil
     while input != 'exit'
-    puts "Choose a company you would like more information on. Type list to see all the available companies or type exit."
-      input = gets.strip.downcase
-      if input.to_i > 0
-        puts display_company_attributes(input)
-      elsif input == 'list'
+    puts "Choose a company you would like more information on by typing its ticker (e.g. AAPL). Type list to see some available companies or type exit."
+      input = gets.strip
+      if input == 'list'
         list_companies
+      elsif display_company_attributes(input)
+        puts display_company_attributes(input)
       else
-        puts "Say again? You can retry typing the company's name, or 'list', or 'exit'."
+        puts "You can retry typing a company's name, or 'list', or 'exit'."
       end
     end
   end

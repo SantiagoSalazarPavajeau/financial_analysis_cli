@@ -6,6 +6,7 @@ class FinancialAnalysis::API
     response["mostActiveStock"].each do |hash|
       FinancialAnalysis::Company.new(hash["ticker"])
     end
+    binding.pry
   end
   
   
