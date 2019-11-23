@@ -1,15 +1,11 @@
 # FinancialAnalysis
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/financial_analysis`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'financial_analysis'
+gem 'financial_analysis_cli'
 ```
 
 And then execute:
@@ -18,11 +14,11 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install financial_analysis
+    $ gem install financial_analysis_cli
 
 ## Usage
 
-TODO: Write usage instructions here
+Access information about public companies. Choose a financial market company-ticker from the list (e.g. 'AAPL') to obtain a broad amount of financial information about the company.
 
 ## Development
 
@@ -32,12 +28,12 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/'proactive-spooling-5819'/financial_analysis. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/SantiagoSalazarPavajeau/financial_analysis_cli. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+The gem is available as open source under the terms of the [MIT License](https://github.com/SantiagoSalazarPavajeau/financial_analysis_cli/blob/master/LICENSE.txt).
 
 ## Code of Conduct
 
-Everyone interacting in the FinancialAnalysis project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/'proactive-spooling-5819'/financial_analysis/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the FinancialAnalysis project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/SantiagoSalazarPavajeau/financial_analysis_cli/blob/master/CODE_OF_CONDUCT.md).
