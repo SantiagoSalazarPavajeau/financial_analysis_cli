@@ -9,9 +9,6 @@ class FinancialAnalysis::Company
   @@all = []
   
   def initialize(ticker)
-    # @name = api_hash["companyName"]
-    # @balance_sheets = []
-    # @income_statements = []
     @ticker = ticker
     response = HTTParty.get("https://financialmodelingprep.com/api/v3/company/profile/#{ticker}")
     response["profile"].each { |k,v| self.send("#{k}=", v) }
@@ -22,9 +19,16 @@ class FinancialAnalysis::Company
     @@all
   end
   
-  # def get_balance_sheet(ticker)
+  # def get_balance_sheets(ticker)
   #   response = HTTParty.get("https://financialmodelingprep.com/api/v3/financials/balance-sheet-statement/#{ticker}")
-  #   balance_sheet = FinancialAnalysis::BalanceSheet.new(response)
+  #   self.balance_sheets = response["financials"]
+  #   self.balance_sheets
+  # end
+  
+  # def get_income_statement(ticker)
+  #   response = HTTParty.get("https://financialmodelingprep.com/api/v3/financials/income-statement/#{ticker}")
+  #   self.income_statements = response["financials"]
+  #   self.income_statements
   # end
   
 end

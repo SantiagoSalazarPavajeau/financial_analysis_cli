@@ -24,4 +24,9 @@ class FinancialAnalysis::BalanceSheet
     balance_sheet = FinancialAnalysis::BalanceSheet.new(response)
   end
   
+  def get_income_statement(ticker)
+    response = HTTParty.get("https://financialmodelingprep.com/api/v3/financials/income-statement/#{ticker}")
+    income_statement = FinancialAnalysis::IncomeStatement.new(response)
+  end
+  
 end
