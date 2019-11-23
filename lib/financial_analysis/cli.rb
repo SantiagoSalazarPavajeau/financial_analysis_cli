@@ -23,7 +23,6 @@ class FinancialAnalysis::CLI
   end
   
   def display_company_attribute(attribute)
-    @compan
   end
   
   def menu

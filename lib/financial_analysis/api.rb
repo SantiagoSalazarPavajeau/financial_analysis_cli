@@ -1,19 +1,14 @@
 class FinancialAnalysis::API
   attr_reader
-  # https://financialmodelingprep.com/api/v3/company/profile/AAPL,FB,GOOG
-  # https://financialmodelingprep.com/api/v3/company/stock/list
+  
   def self.get_companies
     response = HTTParty.get("https://financialmodelingprep.com/api/v3/stock/actives")
     response["mostActiveStock"].each do |hash|
       FinancialAnalysis::Company.new(hash["ticker"])
     end
-    #binding.pry
   end
   
-  def get_balance_sheet(ticker)
-    response = HTTParty.get("https://financialmodelingprep.com/api/v3/financials/balance-sheet-statement/#{ticker}")
-    balance_sheet = FinancialAnalysis::BalanceSheet.new(response)
-  end
+  
   
   # def get_income_statement(ticker)
   #   response = HTTParty.get("https://financialmodelingprep.com/api/v3/financials/income-statement/#{ticker}")

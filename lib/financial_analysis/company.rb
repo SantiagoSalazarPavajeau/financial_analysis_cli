@@ -19,9 +19,11 @@ class FinancialAnalysis::Company
   
   def self.all
     @@all
-    # puts "1. Apple"
-    # puts "2. Facebook"
-    # puts "3. GM"
   end
+  
+  # def get_balance_sheet(ticker)
+  #   response = HTTParty.get("https://financialmodelingprep.com/api/v3/financials/balance-sheet-statement/#{ticker}")
+  #   balance_sheet = FinancialAnalysis::BalanceSheet.new(response)
+  # end
   
 end
