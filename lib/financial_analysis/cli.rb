@@ -16,23 +16,6 @@ class FinancialAnalysis::CLI
     end
   end
   
-  def display_company_attributes(input)
-    # company ticker must connect to that company object
-    # attributes of one company should be displayed
-    # specific company is not being selected
-    company = @companies.detect{ |company| company.ticker == input}
-     puts ""
-     puts "#{company.instance_methods}"
-     puts ""
-  end
-  
-  def display_company_attribute(input)
-    company = @companies.detect{ |company| company.ticker == input}
-     puts ""
-     puts "#{company.companyName}: #{company.input}"
-     puts ""
-  end
-  
   def menu
     input = nil
     while input != 'exit'
@@ -40,8 +23,19 @@ class FinancialAnalysis::CLI
       input = gets.strip
       if input == 'list'
         list_companies
-      elsif display_company_attributes(input)
-        puts display_company_attributes(input)
+      elsif @companies.detect{ |company| company.ticker == input}
+        company = @companies.detect{ |company| company.ticker == input}
+         puts ""
+         puts "#{company.companyName}:" if company.companyName != ""
+         puts ""
+         puts "#{company.description}" if company.description != ""
+         puts "Sector: #{company.sector}" if company.sector != ""
+         puts "CEO: #{company.ceo}" if company.ceo != ""
+         puts "Industry: #{company.industry}" if company.industry != ""
+         puts "Website: #{company.website}" if company.website != ""
+         puts "Stock price: #{company.price}" if company.price != ""
+         puts "Market capitalization: #{company.mktCap}" if company.mktCap != ""
+         puts ""
       else
         puts "You can retry typing a company's name, or 'list', or 'exit'."
       end
