@@ -12,14 +12,15 @@ class FinancialAnalysis::CLI
   def list_companies
     @companies = FinancialAnalysis::Company.all
     @companies.each.with_index(1) do |company, i|
-      puts "#{i}. #{company.companyName}"
+      puts "#{i}. #{company.companyName} -> ticker: #{company.ticker}"
     end
   end
   
   def display_company_attributes(company_number)
-    @companies.each do |company|
-      puts "#{company.attributes}"
-    end
+    # company number must refer to that company
+    # .each do |company|
+    #   puts "#{company}"
+    # end
   end
   
   def display_company_attribute(attribute)

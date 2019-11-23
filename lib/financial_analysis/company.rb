@@ -4,7 +4,7 @@ class FinancialAnalysis::Company
   # https://financialmodelingprep.com/api/v3/financials/income-statement/AAPL
   # https://financialmodelingprep.com/api/v3/company/stock/list
   
-  attr_accessor :name, :balance_sheets, :income_statements, :price, :beta, :volAvg, :mktCap, :lastDiv, :range, :changes, :changesPercentage, :companyName, :exchange, :industry, :website, :description, :ceo, :sector, :image
+  attr_accessor :name, :ticker, :balance_sheets, :income_statements, :price, :beta, :volAvg, :mktCap, :lastDiv, :range, :changes, :changesPercentage, :companyName, :exchange, :industry, :website, :description, :ceo, :sector, :image
   
   @@all = []
   
@@ -12,6 +12,7 @@ class FinancialAnalysis::Company
     # @name = api_hash["companyName"]
     # @balance_sheets = []
     # @income_statements = []
+    @ticker = ticker
     response = HTTParty.get("https://financialmodelingprep.com/api/v3/company/profile/#{ticker}")
     response["profile"].each { |k,v| self.send("#{k}=", v) }
     @@all << self
