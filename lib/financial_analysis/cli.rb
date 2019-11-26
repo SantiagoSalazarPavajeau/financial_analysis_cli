@@ -36,6 +36,13 @@ class FinancialAnalysis::CLI
          puts "Stock price: #{company.price}" if company.price != ""
          puts "Market capitalization: #{company.mktCap}" if company.mktCap != ""
          puts ""
+         puts "Would you like to see the balance sheet and income statment of this company? y/n"
+          input = gets.strip.downcase
+          if input == "y"
+            company.balance_sheet
+            company.income_statement
+          else
+          end
       else
         puts "You can retry typing a company's name, or 'list', or 'exit'."
       end
