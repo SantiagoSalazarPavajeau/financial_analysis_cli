@@ -39,12 +39,13 @@ class FinancialAnalysis::CLI
          puts "Would you like to see the balance sheet and income statment of this company? y/n"
           input = gets.strip.downcase
           if input == "y"
-            company.balance_sheet
-            company.income_statement
+            puts "Balance Sheet: #{company.balance_sheets}."
+            puts ""
+            puts "Income Statement: #{company.income_statements}"
           else
           end
       else
-        puts "You can retry typing a company's name, or 'list', or 'exit'."
+        puts "You can retry typing a company's ticker, or 'list', or 'exit'."
       end
     end
   end
