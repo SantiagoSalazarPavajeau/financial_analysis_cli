@@ -29,6 +29,7 @@ class FinancialAnalysis::CLI
          puts "#{company.companyName}:" if company.companyName != ""
          puts ""
          puts "#{company.description}" if company.description != ""
+         puts ""
          puts "Sector: #{company.sector}" if company.sector != ""
          puts "CEO: #{company.ceo}" if company.ceo != ""
          puts "Industry: #{company.industry}" if company.industry != ""
@@ -39,9 +40,12 @@ class FinancialAnalysis::CLI
          puts "Would you like to see the balance sheet and income statment of this company? y/n"
           input = gets.strip.downcase
           if input == "y"
-            puts "Balance Sheet: #{company.balance_sheets}."
-            puts ""
-            puts "Income Statement: #{company.income_statements}"
+            puts "Balance Sheet:" 
+            Pry::ColorPrinter.pp(company.balance_sheets)
+            puts "Income Statment:"
+            Pry::ColorPrinter.pp(company.income_statements)
+            #puts "#{company.balance_sheets.map {|key, value| puts "#{key}: #{value}" }}"
+            #puts "#{company.income_statements.map {|key, value| puts "#{key}: #{value}" }}"
           else
           end
       else
