@@ -18,10 +18,10 @@ class FinancialAnalysis::CLI
   
   def menu
     input = nil
-    while input != 'exit'
-    puts "Choose a company you would like more information on by typing its ticker (e.g. AAPL). Type list to see some available companies or type exit."
-      input = gets.strip
-      if input == 'list'
+    while input != 'EXIT'
+    puts "Choose a company you would like more information on by typing its ticker (e.g. AAPL). Type LIST to see some available companies or type EXIT."
+      input = gets.strip.upcase
+      if input == 'LIST'
         list_companies
       elsif @companies.detect{ |company| company.ticker == input}
         company = @companies.detect{ |company| company.ticker == input}
@@ -37,19 +37,17 @@ class FinancialAnalysis::CLI
          puts "Stock price: #{company.price}" if company.price != ""
          puts "Market capitalization: #{company.mktCap}" if company.mktCap != ""
          puts ""
-         puts "Would you like to see the balance sheet and income statment of this company? y/n"
-          input = gets.strip.downcase
-          if input == "y"
+         puts "Would you like to see the balance sheet and income statment of this company? Y/N"
+          input = gets.strip.upcase
+          if input == "Y"
             puts "Balance Sheet:" 
             Pry::ColorPrinter.pp(company.balance_sheets)
             puts "Income Statment:"
             Pry::ColorPrinter.pp(company.income_statements)
-            #puts "#{company.balance_sheets.map {|key, value| puts "#{key}: #{value}" }}"
-            #puts "#{company.income_statements.map {|key, value| puts "#{key}: #{value}" }}"
           else
           end
       else
-        puts "You can retry typing a company's ticker, or 'list', or 'exit'."
+        puts "OK! If you would like to try again, try typing a company's ticker, or LIST, or EXIT while in the gem."
       end
     end
   end
