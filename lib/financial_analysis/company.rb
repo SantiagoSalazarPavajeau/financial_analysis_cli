@@ -6,12 +6,8 @@ class FinancialAnalysis::Company
   
   def initialize(ticker)
     @ticker = ticker
-    response = HTTParty.get("https://financialmodelingprep.com/api/v3/company/profile/#{ticker}")
-    response["profile"].each { |k,v| self.send("#{k}=", v) }
-    response_balance = HTTParty.get("https://financialmodelingprep.com/api/v3/financials/balance-sheet-statement/#{ticker}")
-    self.balance_sheets = response_balance["financials"][0]
-    response_income = HTTParty.get("https://financialmodelingprep.com/api/v3/financials/income-statement/#{ticker}")
-    self.income_statements = response_income["financials"][0]
+    company_hash = FinancialAnalysis::API.profile(ticker)
+    company_hash["profile"].each { |k,v| self.send("#{k}=", v) }
     @@all << self
   end
   

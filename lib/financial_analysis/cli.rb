@@ -10,8 +10,7 @@ class FinancialAnalysis::CLI
   end
   
   def list_companies
-    @companies = FinancialAnalysis::Company.all
-    @companies.each.with_index(1) do |company, i|
+    FinancialAnalysis::Company.all.each.with_index(1) do |company, i|
       puts "#{i}. #{company.companyName} -> ticker: #{company.ticker}"
     end
   end
@@ -23,8 +22,8 @@ class FinancialAnalysis::CLI
       input = gets.strip.upcase
       if input == 'LIST'
         list_companies
-      elsif @companies.detect{ |company| company.ticker == input}
-        company = @companies.detect{ |company| company.ticker == input}
+      elsif FinancialAnalysis::Company.all.detect{ |company| company.ticker == input}
+        company = FinancialAnalysis::Company.all.detect{ |company| company.ticker == input}
          puts ""
          puts "#{company.companyName}:" if company.companyName != ""
          puts ""
